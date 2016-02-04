@@ -1,0 +1,1 @@
+Started provisioning of <%= hostname %> using the <%= profile %> profile, this might take a few minutes.

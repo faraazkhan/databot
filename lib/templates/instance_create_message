@@ -1,0 +1,14 @@
+Your instance <%= hostname %> has been created successfully.
+
+Please add the following to your ssh config:
+
+Host <%= hostname %>
+Hostname <%= ip %>
+User <%= requestor %>
+ForwardAgent yes
+ProxyCommand ssh <%= hostname %>@bastion-prod.wellmatchhealth.com nc %h %p
+
+It might take a few minutes for the instance to start accepting ssh connections.
+Once the instance is ready you can ssh into it with the following command:
+
+ssh <%= hostname %>
