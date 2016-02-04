@@ -4,7 +4,7 @@ Please add the following to your ssh config:
 
 Host <%= hostname %>
 Hostname <%= ip %>
-User <%= requestor %>
+User ubuntu
 ForwardAgent yes
 ProxyCommand ssh <%= hostname %>@bastion-prod.wellmatchhealth.com nc %h %p
 

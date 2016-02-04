@@ -3,8 +3,15 @@ module.exports = function(robot) {
   var pairingBox = require('../lib/pairingbox');
   robot.respond(/pair me/i, function(res) {
     var requestor = res.message.user.name;
-    var msg = pairingBox.create(requestor);
-    res.send(msg.announcement);
-    if (msg.status === 'success') { robot.send({user: {name: requestor}}, msg.message);}
+    pairingBox.create(requestor).then(
+      function(req) {
+        res.send(req.announcement);
+        //console.log("RESPONSE____" + JSON.stringify(req));
+        if (req.status === 'success') { robot.send({user: {name: requestor}}, req.message);}
+      },
+      function(err) {
+        res.send(err.announcement);
+      }
+    );
   });
 };
