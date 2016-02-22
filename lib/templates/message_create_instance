@@ -7,7 +7,7 @@ Host <%= temp.hostname %>
 Hostname <%= temp.ipAddress %>
 User ubuntu
 ForwardAgent yes
-ProxyCommand ssh ubuntu@bastion-prod.wellmatchhealth.com nc %h %p
+ProxyCommand ssh bastion-prod.wellmatchhealth.com nc %h %p
 
 It might take a few minutes for the instance to start accepting ssh connections.
 Once the instance is ready you can ssh into it with the following command:

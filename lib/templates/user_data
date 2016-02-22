@@ -1,7 +1,7 @@
 #cloud-config
 
-hostname: <%= hostname %>
+hostname: <%= temp.hostname %>
 manage_etc_hosts: true
 
 runcmd:
-- [ ansible-playbook -i /home/ubuntu/user-data-bootstrap/inventory /home/ubuntu/user-data-bootstrap/playbook.yml --private-key /root/.ssh/id_rsa ]
+- [ cd /home/ubuntu/user-data-bootstrap && ansible-playbook playbook.yml -e "hostname=<%= temp.hostname %>" -u ubuntu ]
