@@ -12,6 +12,7 @@
   "dependencies": {
     "aws-promised": "^2.10.0",
     "aws-sdk": "^2.2.33",
+    "bluebird": "^3.3.1",
     "cli-table2": "^0.2.0",
     "hubot": "^2.18.0",
     "hubot-help": "^0.1.3",
